@@ -1,0 +1,8 @@
+Player will see a black jack table.
+player will place a bet.
+once bet is placed cards will be delt to player and computer
+player will see buttons to stay hit or split
+if player hits they will be delt another card, they can repeate this until they hit stay or they bust.
+if player choses split on double there face down card is turned over and they are delt 2 cards face up.
+when the players turn is done the computer will decide to stay or hit
+if the computer hits 

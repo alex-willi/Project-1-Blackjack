@@ -1,0 +1,5 @@
+body{
+    background-color: forestgreen;
+    display: grid;
+    grid-template-rows: 200px 250px 200px 40px ;
+}

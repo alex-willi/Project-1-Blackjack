@@ -7,7 +7,7 @@ let deckOfCards = ['as', 'ah', 'ac','ad','ks','kh','kc','kd','qs','qh','qc','qd'
 let playerHand = []
 
 let dealerHand = []
-
+let total = []
 let calcTotal = function (first) {
     for (let i = 0; i < first.length; i += 1) {
          let x = first[i].charAt(0)
@@ -15,13 +15,16 @@ let calcTotal = function (first) {
          x = '10'
          }
          if (x == 'a'){
-            x = 11
+            x = '11'
          }
         let h = parseInt(x)
-        console.log(h)
+        total.push(h)
+       let rTotal = total.reduce((a, b) => a + b, 0)
+        // console.log(h)
+        console.log(rTotal)
     }
 }
-    calcTotal(deckOfCards)
+calcTotal(deckOfCards)
 
 
 // function dealP(){

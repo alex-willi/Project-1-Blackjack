@@ -12,6 +12,8 @@ let dealerHand = []
 
 let total = []
 
+let playerHand = []
+
 
 
 
@@ -35,11 +37,12 @@ calcTotalP = function (first) {
             }
             let h = parseInt(x)
             total.push(h)
-            let rTotal = total.reduce((a, b) => a + b, 0)
-            pTotal.innerHTML = rTotal
-           
-        }       
-    }
+            console.log(total)
+            let retTotal = total.reduce((a, b) => a + b, 0)
+            pTotal.innerHTML = retTotal
+            console.log(retTotal)
+        }
+  }       
 }
 
 
@@ -57,12 +60,13 @@ deal.addEventListener('click',() => {
 
 
 })
-let playerHand = []
-// hit.addEventListener('click', () => {
-//     if(playerHand.length >= 2)
-//     dealP()
-//     pCards.textContent = playerHand.toString()
-// })
+
+hit.addEventListener('click', () => {
+    // if(playerHand.length >= 2)
+    dealP()
+    calcTotalP(playerHand)
+    pCards.textContent = playerHand.toString()
+})
 
 
 

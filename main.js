@@ -1,72 +1,333 @@
-const deal = document.querySelector("#deal")
-const hit = document.querySelector("#hit")
-const pCards = document.querySelector("#player-cards")
+const deck = [
+    {
+        card: 'A spade',
+        faceValue: 1,
+        img: 'A',
+    },
+    {
+        card: 'A heart',
+        faceValue: 1,
+        img: 'A',
+    },
+    {
+        card: 'A club',
+        faceValue: 1,
+        img: 'A',
+    },
+    {
+        card: 'A dimond',
+        faceValue: 1,
+        img: 'A',
+    },
+    {
+        card: 'K spade',
+        faceValue: 10,
+        img: 'K',
+    },
+    {
+        card: 'K heart',
+        faceValue: 10,
+        img: 'K',
+    },
+    {
+        card: 'K club',
+        faceValue: 10,
+        img: 'K',
+    },
+    {
+        card: 'K dimond',
+        faceValue: 10,
+        img: 'K',
+    },
+    {
+        card: 'Q spade',
+        faceValue: 10,
+        img: 'Q',
+    },
+    {
+        card: 'Q heart',
+        faceValue: 10,
+        img: 'Q',
+    },
+    {
+        card: 'Q club',
+        faceValue: 10,
+        img: 'Q',
+    },
+    {
+        card: 'Q dimond',
+        faceValue: 10,
+        img: 'Q',
+    },
+    {
+        card: 'J spade',
+        faceValue: 10,
+        img: 'J',
+    },
+    {
+        card: 'J heart',
+        faceValue: 10,
+        img: 'J',
+    },
+    {
+        card: 'J club',
+        faceValue: 10,
+        img: 'J',
+    },
+    {
+        card: 'dimond',
+        faceValue: 10,
+        img: 'J',
+    },
+    {
+        card: '10spade',
+        faceValue: 10,
+        img: '10',
+    },
+    {
+        card: '10heart',
+        faceValue: 10,
+        img: '10',
+    },
+    {
+        card: '10club',
+        faceValue: 10,
+        img: '10',
+    },
+    {
+        card: '10dimond',
+        faceValue: 10,
+        img: '10',
+    },
+    {
+        card: '9spade',
+        faceValue: 9,
+        img: '9',
+    },
+    {
+        card: '9heart',
+        faceValue: 9,
+        img: '9',
+    },
+    {
+        card: '9club',
+        faceValue: 9,
+        img: '9',
+    },
+    {
+        card: '9dimond',
+        faceValue: 9,
+        img: '9',
+    },
+    {
+        card: '8spade',
+        faceValue: 8,
+        img: '8',
+    },
+    {
+        card: '8heart',
+        faceValue: 8,
+        img: '8',
+    },
+    {
+        card: '8club',
+        faceValue: 8,
+        img: '8',
+    },
+    {
+        card: '8dimond',
+        faceValue: 8,
+        img: '8',
+    },
+    {
+        card: '7spade',
+        faceValue: 7,
+        img: '7',
+    },
+    {
+        card: '7heart',
+        faceValue: 7,
+        img: '7',
+    },
+    {
+        card: '7club',
+        faceValue: 7,
+        img: '7',
+    },
+    {
+        card: '7dimond',
+        faceValue: 7,
+        img: '7',
+    },
+    {
+        card: '6spade',
+        faceValue: 6,
+        img: '6',
+    },
+    {
+        card: '6heart',
+        faceValue: 6,
+        img: '6',
+    },
+    {
+        card: '6club',
+        faceValue: 6,
+        img: '6',
+    },
+    {
+        card: '6dimond',
+        faceValue: 6,
+        img: '6',
+    },
+    {
+        card: '5spade',
+        faceValue: 5,
+        img: '5',
+    },
+    {
+        card: '5heart',
+        faceValue: 5,
+        img: '5',
+    },
+    {
+        card: '5club',
+        faceValue: 5,
+        img: '5',
+    },
+    {
+        card: '5dimond',
+        faceValue: 5,
+        img: '5',
+    },
+    {
+        card: '4spade',
+        faceValue: 4,
+        img: '4',
+    },
+    {
+        card: '4heart',
+        faceValue: 4,
+        img: '4',
+    },
+    {
+        card: '4club',
+        faceValue: 4,
+        img: '4',
+    },
+    {
+        card: '4dimond',
+        faceValue: 4,
+        img: '4',
+    },
+    {
+        card: '3spade',
+        faceValue: 3,
+        img: '3',
+    },
+    {
+        card: '3heart',
+        faceValue: 3,
+        img: '3',
+    },
+    {
+        card: '3club',
+        faceValue: 3,
+        img: '3',
+    },
+    {
+        card: '3dimond',
+        faceValue: 3,
+        img: '3',
+    },
+    {
+        card: '2spade',
+        faceValue: 2,
+        img: '2',
+    },
+    {
+        card: '2heart',
+        faceValue: 2,
+        img: '2',
+    },
+    {
+        card: '2club',
+        faceValue: 2,
+        img: '2',
+    },
+    {
+        card: '2dimond',
+        faceValue: 2,
+        img: '2',
+    },
+
+]
+const deal = document.querySelector('#deal')
+const hit = document.querySelector('#hit')
+const stay = document.querySelector('#stay')
 let pTotal = document.querySelector("#player-total")
-
-let deckOfCards = ['as', 'ah', 'ac','ad','ks','kh','kc','kd','qs','qh','qc','qd','js','jh','jd','js','10s','10h','10c','10d','9s','9h','9c','9d','8s','8h','8c','8d','7s','7h','7c','7d','6s','6h','6c','6d','5s','5h','5c','5d','4s','4h','4c','4d','3s','3h','3c','3d','2s','2h','2c','2d',]
-
-
-
-
-let dealerHand = []
-
-let total = []
+let dTotal = document.querySelector('#dealer-total')
+let pCards = document.querySelector("#player-cards")
+let dCards = document.querySelector('#dealer-cards')
 
 let playerHand = []
-
-
-
-
+let playerTotal = []
+let dealerHand = []
+let dealerTotal = []
 function dealP(){
-    playerHand.push(deckOfCards.splice(Math.floor(Math.random()* deckOfCards.length), 1))
-}
-
-function dealD(){
-    dealerHand.push(deckOfCards.splice(Math.floor(Math.random()* deckOfCards.length), 1))
-}
-
-calcTotalP = function (first) {
-    for (let i = 0; i < first.length; i ++) {
-        for (j = 0; j < first[i].length; j++){
-         let x = first[i][j].charAt(0)
-         if (x == 'k' || x == '1'|| x == 'q' || x == 'j'){
-         x = '10'
-         }
-         if (x == 'a'){
-             x = '11'
-            }
-            let h = parseInt(x)
-            total.push(h)
-            console.log(total)
-            let retTotal = total.reduce((a, b) => a + b, 0)
-            pTotal.innerHTML = retTotal
-            console.log(retTotal)
-        }
-  }       
-}
-
-
-
-
-deal.addEventListener('click',() => {
-    dealD()
-    dealD()
-    dealP()
-    dealP()
-    pCards.textContent = playerHand
-    calcTotalP(playerHand)
-  
+    let randCard = Math.floor(Math.random()* deck.length)
+    let rCard = deck[randCard]
+    playerHand.push(rCard.card)
+    playerTotal.push(rCard.faceValue)
+    deck.splice(randCard,1)
+   console.log(rCard)
+   console.log(deck)
+ 
+   console.log(playerHand)
+   console.log(deck.indexOf(randCard))
+   console.log(randCard)
     
+}
+function dealD(){
+    let randCard = Math.floor(Math.random()* deck.length)
+    let rCard = deck[randCard]
+   
+    dealerHand.push(rCard.card)
+    dealerTotal.push(rCard.faceValue)
+    deck.splice(randCard,1)
+   
+}
 
 
-})
-
-hit.addEventListener('click', () => {
-    // if(playerHand.length >= 2)
+deal.addEventListener('click',()=>{
     dealP()
-    calcTotalP(playerHand)
-    pCards.textContent = playerHand.toString()
-})
+    dealP()
+    dealD()
+    pCards.innerHTML = playerHand
+    pTotal.innerHTML = playerTotal.reduce((a,b)=> a+ b)
+    dCards.innerHTML = dealerHand
+    dTotal.innerHTML = dealerTotal.reduce((a,b)=> a+ b)
+    })
+
+hit.addEventListener('click',() => {
+    if(playerHand.length >= 2){
+         dealP()
+         pCards.innerHTML = playerHand
+        pTotal.innerHTML = playerTotal.reduc((a,b)=> a+ b)
+     }
+ })
+
+ stay.addEventListener('click',() => {
+    if(playerTotal < 22){
+        if(dealerTotal < 18)
+        dealD()
+        
+    }
+ })
+
+
+    
+   
+
 
 
 

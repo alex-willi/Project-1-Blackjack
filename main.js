@@ -276,17 +276,21 @@ let playerHand = []
 let playerTotal = []
 let dealerHand = []
 let dealerTotal = []
+let discard = []
 
 function dealP(){
     let randCard = Math.floor(Math.random()* deck.length)
     let rCard = deck[randCard]
+    discard.push(rCard)
     playerHand.push(rCard.card)
     playerTotal.push(rCard.faceValue)
     deck.splice(randCard,1)
+    console.log(discard)
 }
 function dealD(){
     let randCard = Math.floor(Math.random()* deck.length)
     let rCard = deck[randCard]
+    discard.push(rCard)
     dealerHand.push(rCard.card)
     dealerTotal.push(rCard.faceValue)
     deck.splice(randCard,1)
@@ -306,6 +310,7 @@ function hiddenCard(){
 function showCard(){
     let randCard = Math.floor(Math.random()* deck.length)
     let rCard = deck[randCard]
+    discard.push(rCard)
     dealerHand.push(rCard.card)
     dealerTotal.push(rCard.faceValue)
     deck.splice(randCard,1)
@@ -344,9 +349,9 @@ hit.addEventListener('click',() => {
 
  function endRound(){
     if (pTotal.innerHTML < dTotal.innerHTML){
-
     }
  }
+
  
 
 

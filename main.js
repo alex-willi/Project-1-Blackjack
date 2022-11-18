@@ -285,7 +285,6 @@ function dealP(){
     playerHand.push(rCard.card)
     playerTotal.push(rCard.faceValue)
     deck.splice(randCard,1)
-    console.log(discard)
 }
 function dealD(){
     let randCard = Math.floor(Math.random()* deck.length)
@@ -323,6 +322,7 @@ deal.addEventListener('click',()=>{
     hiddenCard()
     totalAllPlayer()
     totalAllDealer()
+    console.log(deck)
     
     })
 
@@ -345,6 +345,15 @@ hit.addEventListener('click',() => {
         dealD()
         totalAllDealer()
     }
+ })
+
+ playAgain.addEventListener('click',() => {
+    deck.push(...discard)
+    discard.splice(0,discard.length)
+    console.log(discard)
+    console.log(deck)
+    console.log(discard)
+
  })
 
  function endRound(){

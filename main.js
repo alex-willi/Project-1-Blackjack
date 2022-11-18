@@ -319,10 +319,13 @@ function showCard(){
 function calcWinner(){
     if (dTotal.innerHTML > 21){
         end.innerHTML = "YOU WIN"
+        playAgain.style.display = "inline"
     }else if (dTotal.innerHTML < pTotal.innerHTML){
         end.innerHTML = "YOU WIN"
+        playAgain.style.display = "inline"
     }else{
         end.innerHTML = "HOUSE WINS"
+        playAgain.style.display = "inline"
     } 
  }
 deal.addEventListener('click',()=>{
@@ -331,10 +334,8 @@ deal.addEventListener('click',()=>{
     dealD()
     hiddenCard()
     totalAllPlayer()
-    totalAllDealer()
-    console.log(deck)
-    
-    })
+    totalAllDealer()    
+})
 
 hit.addEventListener('click',() => {
     if(playerHand.length >= 2){
@@ -345,6 +346,7 @@ hit.addEventListener('click',() => {
         end.innerHTML = "BUST HOUSE WINS"
         showCard()
         totalAllDealer()
+        playAgain.style.display = "inline"
      }
  })
 

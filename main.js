@@ -75,12 +75,15 @@ function showCard(){
     dealerDownCard.innerHTML = " "
 }
 
-function calcWinner(){
+function calcWinner(){pTotal.innerHTML
     if (dTotal.innerHTML > 21){
+        end.innerHTML = "HOUSE BUST YOU WIN"
+        playAgain.style.display = "inline"
+    }else if (playerTotal.reduce((a,b)=> a+ b) > dealerTotal.reduce((a,b)=> a+ b)){
         end.innerHTML = "YOU WIN"
         playAgain.style.display = "inline"
-    }else if (dTotal.innerHTML < pTotal.innerHTML){
-        end.innerHTML = "YOU WIN"
+    }else if(pTotal.innerHTML == dTotal.innerHTML){
+        end.innerHTML = "PUSH"
         playAgain.style.display = "inline"
     }else{
         end.innerHTML = "HOUSE WINS"
@@ -89,12 +92,14 @@ function calcWinner(){
  }
  
 deal.addEventListener('click',()=>{
+    if(pTotal.innerHTML < 1){
     dealP()
     dealP()
     dealD()
     dealerDownCard.innerHTML = "hidden"
     totalAllPlayer()
-    totalAllDealer()    
+    totalAllDealer()
+    }
 })
 
 hit.addEventListener('click',() => {
@@ -111,6 +116,7 @@ hit.addEventListener('click',() => {
  })
 
  stay.addEventListener('click',() => {
+    if (playerHand.length >= 2){
      showCard()
      totalAllDealer()
     while(dTotal.innerHTML < 18){
@@ -118,7 +124,7 @@ hit.addEventListener('click',() => {
         totalAllDealer()
     }
     calcWinner()
-    
+}
  })
 
  playAgain.addEventListener('click',() => {

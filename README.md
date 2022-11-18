@@ -12,6 +12,8 @@ Blackjack probably originated in the French casinos around 1700.
 JavaScript, HTML, CSS, github, VS Code
 
 # Getting Started
+https://alex-willi.github.io/Project-1-Blackjack/
+
 To start the game hit the deal button to start the first round.
 
 Use the hit button to get a additional card in your hand.
@@ -28,8 +30,6 @@ Add betting.
 Get cards to animate being delt and flipping.
 
 Add split function to for doubles.
-
-
 
 # Wire Frame
 

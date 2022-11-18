@@ -1,12 +1,13 @@
 body{
     background-color: forestgreen;
     display: grid;
-    grid-template-rows: 200px 170px 200px 40px ;
+    grid-template-rows: 200px 170px 200px;
 }
 .dealer{
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 .end{
 display: flex;
@@ -15,4 +16,10 @@ justify-content: space-around;
 }
 #play-again{
     display: none;
+}
+.player{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }

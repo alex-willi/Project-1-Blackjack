@@ -311,9 +311,6 @@ function showCard(){
     dealerTotal.push(rCard.faceValue)
     deck.splice(randCard,1)
     dealerDownCard.innerHTML = " "
-    console.log(dealerHiddenCard)
-    console.log(dealerHiddenValue)
-    
 }
 deal.addEventListener('click',()=>{
     dealP()
@@ -328,19 +325,23 @@ deal.addEventListener('click',()=>{
 hit.addEventListener('click',() => {
     if(playerHand.length >= 2){
          dealP()
-         totalAllPlayer
+         totalAllPlayer()
      }
  })
 
  stay.addEventListener('click',() => {
-    if(dealerTotal < 18){
+     showCard()
+     totalAllDealer()
+    while(dTotal.innerHTML < 18){
         dealD()
         totalAllDealer()
     }
+    
+        
+    
  })
  split.addEventListener('click',()=>{
-    showCard()
-    totalAllDealer()
+    
  })
 
 

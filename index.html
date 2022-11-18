@@ -5,8 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style.css" />
+    <script src="./deck.js"></script>
     <script src="./main.js" defer></script>
-    <script src="./deck.js" defer></script>
     <title>Blackjack</title>
 </head>
 <body>
@@ -15,12 +15,9 @@
         <div id="dealer-cards">dcards</div>
         <div id="hidden-card"></div>
     </div>
-    <div class="betting">
+    <div class="end">
         <div id="end-round"></div>
         <button id="play-again">PLAY AGAIN</button>
-        <button id="bet-up">+</button>
-        <button id="bet-down">-</button>
-        <div id="current-bet">100</div>
         <button id="deal">deal</button>
     </div>
     <div class="player">
@@ -29,7 +26,6 @@
         <button id="hit">HIT</button>
         <button id="stay">STAY</button>
     </div>
-    <div id="total-money">1000</div>
 
     
 </body>

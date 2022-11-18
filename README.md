@@ -9,7 +9,7 @@ Blackjack probably originated in the French casinos around 1700.
  # Screenshot(s)
 
  # Technologies Used
-JavaScript, HTML, CSS
+JavaScript, HTML, CSS, github, VS Code
 
 # Getting Started
 To start the game hit the deal button to start the first round.

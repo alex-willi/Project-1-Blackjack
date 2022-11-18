@@ -264,18 +264,18 @@ const deck = [
 const deal = document.querySelector('#deal')
 const hit = document.querySelector('#hit')
 const stay = document.querySelector('#stay')
+const playAgain = document.querySelector('#play-again')
 let pTotal = document.querySelector("#player-total")
 let dTotal = document.querySelector('#dealer-total')
 let pCards = document.querySelector("#player-cards")
 let dCards = document.querySelector('#dealer-cards')
 let dealerDownCard = document.querySelector('#hidden-card')
+let end = document.querySelector('#end-round')
 
 let playerHand = []
 let playerTotal = []
 let dealerHand = []
 let dealerTotal = []
-let dealerHiddenCard = []
-let dealerHiddenValue = []
 
 function dealP(){
     let randCard = Math.floor(Math.random()* deck.length)
@@ -326,6 +326,11 @@ hit.addEventListener('click',() => {
          dealP()
          totalAllPlayer()
      }
+     if(pTotal.innerHTML > 21){
+        end.innerHTML = "BUST HOUSE WINS"
+        showCard()
+        totalAllDealer()
+     }
  })
 
  stay.addEventListener('click',() => {
@@ -335,10 +340,13 @@ hit.addEventListener('click',() => {
         dealD()
         totalAllDealer()
     }
-    
-        
-    
  })
+
+ function endRound(){
+    if (pTotal.innerHTML < dTotal.innerHTML){
+
+    }
+ }
  
 
 

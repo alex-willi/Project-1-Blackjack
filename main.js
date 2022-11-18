@@ -75,7 +75,7 @@ const deck = [
         img: 'J',
     },
     {
-        card: 'dimond',
+        card: 'J dimond',
         faceValue: 10,
         img: 'J',
     },
@@ -273,54 +273,50 @@ let playerHand = []
 let playerTotal = []
 let dealerHand = []
 let dealerTotal = []
+let hideCard = ""
 function dealP(){
     let randCard = Math.floor(Math.random()* deck.length)
     let rCard = deck[randCard]
     playerHand.push(rCard.card)
     playerTotal.push(rCard.faceValue)
     deck.splice(randCard,1)
-   console.log(rCard)
-   console.log(deck)
- 
-   console.log(playerHand)
-   console.log(deck.indexOf(randCard))
-   console.log(randCard)
-    
 }
 function dealD(){
     let randCard = Math.floor(Math.random()* deck.length)
     let rCard = deck[randCard]
-   
     dealerHand.push(rCard.card)
     dealerTotal.push(rCard.faceValue)
     deck.splice(randCard,1)
-   
 }
-
+function totalAllPlayer(){
+    pCards.innerHTML = playerHand
+    pTotal.innerHTML = playerTotal.reduce((a,b)=> a+ b)
+}
+function totalAllDealer(){
+    dCards.innerHTML = dealerHand
+    dTotal.innerHTML = dealerTotal.reduce((a,b)=> a+ b)
+}
 
 deal.addEventListener('click',()=>{
     dealP()
     dealP()
     dealD()
-    pCards.innerHTML = playerHand
-    pTotal.innerHTML = playerTotal.reduce((a,b)=> a+ b)
-    dCards.innerHTML = dealerHand
-    dTotal.innerHTML = dealerTotal.reduce((a,b)=> a+ b)
+    totalAllPlayer()
+    totalAllDealer()
+    
     })
 
 hit.addEventListener('click',() => {
     if(playerHand.length >= 2){
          dealP()
-         pCards.innerHTML = playerHand
-        pTotal.innerHTML = playerTotal.reduc((a,b)=> a+ b)
+         totalAllPlayer
      }
  })
 
  stay.addEventListener('click',() => {
-    if(playerTotal < 22){
-        if(dealerTotal < 18)
+    if(dealerTotal < 18){
         dealD()
-        
+        totalAllDealer()
     }
  })
 

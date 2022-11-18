@@ -264,7 +264,6 @@ const deck = [
 const deal = document.querySelector('#deal')
 const hit = document.querySelector('#hit')
 const stay = document.querySelector('#stay')
-const split = document.querySelector('#split')
 let pTotal = document.querySelector("#player-total")
 let dTotal = document.querySelector('#dealer-total')
 let pCards = document.querySelector("#player-cards")
@@ -340,9 +339,7 @@ hit.addEventListener('click',() => {
         
     
  })
- split.addEventListener('click',()=>{
-    
- })
+ 
 
 
     

@@ -264,6 +264,7 @@ const deck = [
 const deal = document.querySelector('#deal')
 const hit = document.querySelector('#hit')
 const stay = document.querySelector('#stay')
+const split = document.querySelector('#split')
 let pTotal = document.querySelector("#player-total")
 let dTotal = document.querySelector('#dealer-total')
 let pCards = document.querySelector("#player-cards")
@@ -300,13 +301,19 @@ function totalAllDealer(){
     dTotal.innerHTML = dealerTotal.reduce((a,b)=> a+ b)
 }
 function hiddenCard(){
+    dealerDownCard.innerHTML = "hidden"
+    
+}
+function showCard(){
     let randCard = Math.floor(Math.random()* deck.length)
     let rCard = deck[randCard]
-    dealerHiddenCard.push(rCard.card)
-    dealerHiddenValue.push(rCard.faceValue)
+    dealerHand.push(rCard.card)
+    dealerTotal.push(rCard.faceValue)
     deck.splice(randCard,1)
-    dealerDownCard.innerHTML = "hidden"
-
+    dealerDownCard.innerHTML = " "
+    console.log(dealerHiddenCard)
+    console.log(dealerHiddenValue)
+    
 }
 deal.addEventListener('click',()=>{
     dealP()
@@ -330,6 +337,10 @@ hit.addEventListener('click',() => {
         dealD()
         totalAllDealer()
     }
+ })
+ split.addEventListener('click',()=>{
+    showCard()
+    totalAllDealer()
  })
 
 

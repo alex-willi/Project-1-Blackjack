@@ -296,11 +296,19 @@ function dealD(){
 }
 function totalAllPlayer(){
     pCards.innerHTML = playerHand
+    if (playerTotal.length !== 0){
     pTotal.innerHTML = playerTotal.reduce((a,b)=> a+ b)
+    }else{
+        pTotal.innerHTML = playerTotal
+    }
 }
 function totalAllDealer(){
     dCards.innerHTML = dealerHand
-    dTotal.innerHTML = dealerTotal.reduce((a,b)=> a+ b)
+    if (dealerTotal.length !== 0){
+        dTotal.innerHTML = dealerTotal.reduce((a,b)=> a+ b)
+        }else{
+            dTotal.innerHTML = dealerTotal
+        }
 }
 function hiddenCard(){
     dealerDownCard.innerHTML = "hidden"
@@ -364,6 +372,14 @@ hit.addEventListener('click',() => {
  playAgain.addEventListener('click',() => {
     deck.push(...discard)
     discard.splice(0,discard.length)
+    playAgain.style.display = "none"
+    end.innerHTML = ""
+    playerHand.splice(0,playerHand.length)
+    playerTotal.splice(0,playerTotal.length)
+    dealerHand.splice(0,dealerHand.length)
+    dealerTotal.splice(0,dealerTotal.length)
+    totalAllPlayer()
+    totalAllDealer()
  })
 
  

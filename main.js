@@ -77,15 +77,19 @@ function showCard(){
 
 function calcWinner(){pTotal.innerHTML
     if (dTotal.innerHTML > 21){
+        end.style.display = "inline"
         end.innerHTML = "HOUSE BUST YOU WIN"
         playAgain.style.display = "inline"
     }else if (playerTotal.reduce((a,b)=> a+ b) > dealerTotal.reduce((a,b)=> a+ b)){
+        end.style.display = "inline"
         end.innerHTML = "YOU WIN"
         playAgain.style.display = "inline"
     }else if(pTotal.innerHTML == dTotal.innerHTML){
+        end.style.display = "inline"
         end.innerHTML = "PUSH"
         playAgain.style.display = "inline"
     }else{
+        end.style.display = "inline"
         end.innerHTML = "HOUSE WINS"
         playAgain.style.display = "inline"
     } 
@@ -131,6 +135,7 @@ hit.addEventListener('click',() => {
     deck.push(...discard)
     discard.splice(0,discard.length)
     playAgain.style.display = "none"
+    end.style.display = "none"
     end.innerHTML = ""
     playerHand.splice(0,playerHand.length)
     playerTotal.splice(0,playerTotal.length)

@@ -268,12 +268,15 @@ let pTotal = document.querySelector("#player-total")
 let dTotal = document.querySelector('#dealer-total')
 let pCards = document.querySelector("#player-cards")
 let dCards = document.querySelector('#dealer-cards')
+let dealerDownCard = document.querySelector('#hidden-card')
 
 let playerHand = []
 let playerTotal = []
 let dealerHand = []
 let dealerTotal = []
-let hideCard = ""
+let dealerHiddenCard = []
+let dealerHiddenValue = []
+
 function dealP(){
     let randCard = Math.floor(Math.random()* deck.length)
     let rCard = deck[randCard]
@@ -296,11 +299,20 @@ function totalAllDealer(){
     dCards.innerHTML = dealerHand
     dTotal.innerHTML = dealerTotal.reduce((a,b)=> a+ b)
 }
+function hiddenCard(){
+    let randCard = Math.floor(Math.random()* deck.length)
+    let rCard = deck[randCard]
+    dealerHiddenCard.push(rCard.card)
+    dealerHiddenValue.push(rCard.faceValue)
+    deck.splice(randCard,1)
+    dealerDownCard.innerHTML = "hidden"
 
+}
 deal.addEventListener('click',()=>{
     dealP()
     dealP()
     dealD()
+    hiddenCard()
     totalAllPlayer()
     totalAllDealer()
     

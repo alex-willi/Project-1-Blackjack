@@ -315,6 +315,16 @@ function showCard(){
     deck.splice(randCard,1)
     dealerDownCard.innerHTML = " "
 }
+
+function calcWinner(){
+    if (dTotal.innerHTML > 21){
+        end.innerHTML = "YOU WIN"
+    }else if (dTotal.innerHTML < pTotal.innerHTML){
+        end.innerHTML = "YOU WIN"
+    }else{
+        end.innerHTML = "HOUSE WINS"
+    } 
+ }
 deal.addEventListener('click',()=>{
     dealP()
     dealP()
@@ -345,21 +355,16 @@ hit.addEventListener('click',() => {
         dealD()
         totalAllDealer()
     }
+    calcWinner()
+    
  })
 
  playAgain.addEventListener('click',() => {
     deck.push(...discard)
     discard.splice(0,discard.length)
-    console.log(discard)
-    console.log(deck)
-    console.log(discard)
-
  })
 
- function endRound(){
-    if (pTotal.innerHTML < dTotal.innerHTML){
-    }
- }
+ 
 
  
 

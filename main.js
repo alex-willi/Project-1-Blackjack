@@ -265,6 +265,9 @@ const deal = document.querySelector('#deal')
 const hit = document.querySelector('#hit')
 const stay = document.querySelector('#stay')
 const playAgain = document.querySelector('#play-again')
+const betUp = document.querySelector("#bet-up")
+const betDown = document.querySelector("#bet-down")
+const currentBet = document.querySelector("#current-bet")
 let pTotal = document.querySelector("#player-total")
 let dTotal = document.querySelector('#dealer-total')
 let pCards = document.querySelector("#player-cards")
@@ -380,6 +383,12 @@ hit.addEventListener('click',() => {
     dealerTotal.splice(0,dealerTotal.length)
     totalAllPlayer()
     totalAllDealer()
+ })
+ betUp.addEventListener('click',() => {
+    let betTotal = currentBet.innerHTML
+    parseInt(betTotal)
+    console.log(betTotal)
+    console.log(dealerTotal)
  })
 
  

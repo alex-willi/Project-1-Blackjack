@@ -1,83 +1,37 @@
 # Project-1-Blackjack
 
-# User Story
-Player will see a black jack table.
+# Super Array Blackjack
+Classic casino card game Blackjack
 
-The player will place a bet.
+Blackjack probably originated in the French casinos around 1700. 
+ source: https://crescent.edu/post/the-history-of-blackjack#:~:text=The%20origins%20of%20Blackjack%20is,were%20popular%20at%20that%20time.
 
-Once a bet is placed cards will be dealt to the player and computer.
+ # Screenshot(s)
 
-The player will see buttons to stay hit or split.
+ # Technologies Used
+JavaScript, HTML, CSS
 
-If a player hits they will be dealt another card, they can repeat this until they press stay or they bust.
+# Getting Started
+To start the game hit the deal button to start the first round.
 
-If a player choses split on double there face down card is turned over and they are dealt 2 cards face up.
+Use the hit button to get a additional card in your hand.
 
-When the player's turn is done the computer will decide to stay or hit.
+Use the stay button to let the dealer take its turn.
 
-If the computer hits it will do so until its total card value is equal to or greater than 17.
+Use the play again button to start another round.
 
-After computers turn the game will decide a winner.
+# Next Steps
+Add 11 or 1 condition to Ace.
 
-If the player has a higher value than the computer under 21 the player wins and doubles the bet.
+Add betting.
 
-Otherwise the computer wins and the player loses the bet.
+Get cards to animate being delt and flipping.
 
-If it is a tie the game calls push on this round and the player keeps the bet.
+Add split function to for doubles.
 
-# Seudo Code
 
-Define player choices
-Hit 
-Stay
-Split
-
-Define amount of money
-1000
-
-Define how to bet
-Increase bet
-Decrease bet
-Place bet
-
-Define deck of cards
-52 cards
-4 suites
-13 card faces
-
-Define computer choices
-Hit if lower or equal to 17
-
-Define win conditions
-If player value is greater then computer value
-If computer value is greater than 21
-If players first 2 cards value equal 21
-
-Define lose condition
-If player value is less then computer value
-If computer first 2 cards equal 21
-If player value is greater than 21
-
-Define tie condition
-Player value is equal to computer value
-
-Pick random cards
-Pick 13 face value card 4 times for each suit
-
-Display cards
-Cards hidden until delt
-
-Compare cards
-If total values are less, greater or equal to computers.
-
-Decide winner
 
 # Wire Frame
-
-
-
-
-
 
 
 ![Alt text](https://i.imgur.com/uCTa00C.png)

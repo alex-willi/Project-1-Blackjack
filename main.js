@@ -126,7 +126,7 @@ stay.addEventListener("click", () => {
   if (playerHand.length >= 2 && end.innerHTML === "") {
     showCard();
     totalAllDealer();
-    while (dTotal.innerHTML < 18) {
+    while (dTotal.innerHTML < 17) {
       dealD();
       totalAllDealer();
     }

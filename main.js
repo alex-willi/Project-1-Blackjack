@@ -48,7 +48,7 @@ function dealD(){
 }
 
 function totalAllPlayer(){
-    pCards.innerHTML = playerHand
+    pCards.innerHTML = playerHand.join('')
     if (playerTotal.length !== 0){
     pTotal.innerHTML = playerTotal.reduce((a,b)=> a+ b)
     }else{
@@ -57,7 +57,7 @@ function totalAllPlayer(){
 }
 
 function totalAllDealer(){
-    dCards.innerHTML = dealerHand
+    dCards.innerHTML = dealerHand.join('')
     if (dealerTotal.length !== 0){
         dTotal.innerHTML = dealerTotal.reduce((a,b)=> a+ b)
         }else{
@@ -112,7 +112,8 @@ hit.addEventListener('click',() => {
          totalAllPlayer()
      }
      if(pTotal.innerHTML > 21){
-        end.innerHTML = "BUST HOUSE WINS"
+        end.style.display = "inline"
+        end.innerHTML = "BUST. HOUSE WINS."
         showCard()
         totalAllDealer()
         playAgain.style.display = "inline"

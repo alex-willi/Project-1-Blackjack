@@ -100,7 +100,7 @@ deal.addEventListener('click',()=>{
     dealP()
     dealP()
     dealD()
-    dealerDownCard.innerHTML = "hidden"
+    dealerDownCard.innerHTML = "🂠"
     totalAllPlayer()
     totalAllDealer()
     }

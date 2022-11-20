@@ -78,19 +78,19 @@ function showCard(){
 function calcWinner(){pTotal.innerHTML
     if (dTotal.innerHTML > 21){
         end.style.display = "inline"
-        end.innerHTML = "HOUSE BUST YOU WIN"
+        end.innerHTML = "HOUSE BUST. YOU WIN."
         playAgain.style.display = "inline"
     }else if (playerTotal.reduce((a,b)=> a+ b) > dealerTotal.reduce((a,b)=> a+ b)){
         end.style.display = "inline"
-        end.innerHTML = "YOU WIN"
+        end.innerHTML = "YOU WIN."
         playAgain.style.display = "inline"
     }else if(pTotal.innerHTML == dTotal.innerHTML){
         end.style.display = "inline"
-        end.innerHTML = "PUSH"
+        end.innerHTML = "PUSH."
         playAgain.style.display = "inline"
     }else{
         end.style.display = "inline"
-        end.innerHTML = "HOUSE WINS"
+        end.innerHTML = "HOUSE WINS."
         playAgain.style.display = "inline"
     } 
  }
@@ -107,7 +107,7 @@ deal.addEventListener('click',()=>{
 })
 
 hit.addEventListener('click',() => {
-    if(playerHand.length >= 2){
+    if(playerHand.length >= 2 && end.innerHTML === ""){
          dealP()
          totalAllPlayer()
      }
@@ -121,7 +121,7 @@ hit.addEventListener('click',() => {
  })
 
  stay.addEventListener('click',() => {
-    if (playerHand.length >= 2){
+    if (playerHand.length >= 2 && end.innerHTML === ""){
      showCard()
      totalAllDealer()
     while(dTotal.innerHTML < 18){
@@ -138,12 +138,16 @@ hit.addEventListener('click',() => {
     playAgain.style.display = "none"
     end.style.display = "none"
     end.innerHTML = ""
+    dCards.innerHTML = "🂠🂠"
+    pCards.innerHTML = "🂠🂠"
     playerHand.splice(0,playerHand.length)
     playerTotal.splice(0,playerTotal.length)
     dealerHand.splice(0,dealerHand.length)
     dealerTotal.splice(0,dealerTotal.length)
     totalAllPlayer()
     totalAllDealer()
+    dCards.innerHTML = "🂠🂠"
+    pCards.innerHTML = "🂠🂠"
  })
 
 

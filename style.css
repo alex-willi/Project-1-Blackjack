@@ -1,98 +1,99 @@
-body{
-    background-color: forestgreen;
-    display: grid;
-    grid-template-rows: 200px 100px 170px 100px 200px;
-    background-image: ;
+body {
+  background-color: forestgreen;
+  display: grid;
+  grid-template-rows: 200px 150px 170px 150px 200px;
+  background-image: ;
 }
-.dealer{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+.dealer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-#dealer-total{
-    background-color: aliceblue;
-    border-radius: 20px;
-    padding: 20px;
-    font-size: x-large;
-    font-weight: bolder;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+#dealer-total {
+  background-color: aliceblue;
+  border-radius: 20px;
+  padding: 20px;
+  font-size: x-large;
+  font-weight: bolder;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-.dealer-hand{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    color: rgb(121, 23, 23);
+.dealer-hand {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: rgb(121, 23, 23);
 }
-#dealer-cards{
-    font-size: 100px;
+#dealer-cards,
+#hidden-card {
+  font-size: 100px;
 }
-#hidden-card{
-    font-size: 100px;
+.end {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
-.end{
-display: flex;
-align-items: center;
-justify-content: space-around;
+#end-round {
+  display: none;
+  background-color: aliceblue;
+  border-radius: 20px;
+  padding: 20px;
+  font-size: x-large;
+  font-weight: bolder;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-#end-round{
-    display: none;
-    background-color: aliceblue;
-    border-radius: 20px;
-    padding: 20px;
-    font-size: x-large;
-    font-weight: bolder;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+#play-again {
+  display: none;
+  background-color: burlywood;
+  font-size: xx-large;
+  border-radius: 20px;
+  color: rgb(50, 55, 58);
+  position: absolute;
+  left: auto;
 }
-#play-again{
-    display:none;
-    background-color: burlywood;
-    font-size: xx-large;
-    border-radius: 20px;
-    color: rgb(50, 55, 58);
-    position: absolute;
-    left: auto;
+#deal,
+#hit,
+#stay {
+  background-color: burlywood;
+  font-size: xx-large;
+  border-radius: 20px;
+  color: rgb(50, 55, 58);
 }
-#deal, #hit, #stay{
-    background-color: burlywood;
-    font-size: xx-large;
-    border-radius: 20px;
-    color: rgb(50, 55, 58);
+.player-hand {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: rgb(121, 23, 23);
 }
-.player-hand{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    color: rgb(121, 23, 23);
+#player-cards {
+  font-size: 100px;
 }
-#player-cards{
-    font-size: 100px;
+.player {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
-.player{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+#player-total {
+  background-color: aliceblue;
+  border-radius: 20px;
+  padding: 20px;
+  font-size: x-large;
+  font-weight: bolder;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-
-#player-total{
-    background-color: aliceblue;
-    border-radius: 20px;
-    padding: 20px;
-    font-size: x-large;
-    font-weight: bolder;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+.buttons {
+  display: flex;
+  flex-direction: row;
+  margin: auto;
 }
-.buttons{
-    display: flex;
-    flex-direction: row;
-    margin: auto;
+#hit {
+  position: relative;
+  right: 20px;
 }
-#hit{
-    position: relative;
-    right: 20px;
-}
-#stay{
-    position: relative;
-    left: 40px;
+#stay {
+  position: relative;
+  left: 40px;
 }

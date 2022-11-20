@@ -8,6 +8,12 @@ Blackjack probably originated in the French casinos around 1700.
 
  # Screenshot(s)
 
+![Alt text](https://i.imgur.com/moDOwvy.png)
+
+![Alt text](https://i.imgur.com/AnVBonD.png)
+
+![Alt text](https://i.imgur.com/os3PZI2.png)
+
  # Technologies Used
 JavaScript, HTML, CSS, github, VS Code
 
@@ -29,7 +35,9 @@ Add betting.
 
 Get cards to animate being delt and flipping.
 
-Add split function to for doubles.
+Add split function for doubles.
+
+Use images of real cards.
 
 # Wire Frame
 

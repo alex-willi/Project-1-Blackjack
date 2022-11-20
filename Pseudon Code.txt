@@ -19,7 +19,7 @@ Define deck of cards
 13 card faces
 
 Define computer choices
-Hit if lower or equal to 17
+Hit if lower or equal to 16
 
 Define win conditions
 If player value is greater then computer value
@@ -38,7 +38,7 @@ Pick random cards
 Pick 13 face value card 4 times for each suit
 
 Display cards
-Cards hidden until delt
+Cards hidden until dealt
 
 Compare cards
 If total values are less, greater or equal to computers.

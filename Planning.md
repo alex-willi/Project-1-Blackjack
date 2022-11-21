@@ -24,7 +24,7 @@ Otherwise the computer wins and the player loses the bet.
 
 If it is a tie the game calls push on this round and the player keeps the bet.
 
-# Seudo Code
+# Pseudo Code
 
 Define player choices
 Hit

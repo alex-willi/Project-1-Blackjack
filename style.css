@@ -2,7 +2,6 @@ body {
   background-color: forestgreen;
   display: grid;
   grid-template-rows: 200px 150px 170px 150px 200px;
-  background-image: ;
 }
 .dealer {
   display: flex;
